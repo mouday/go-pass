@@ -1,18 +1,6 @@
-# Cron Admin
+# Go Pass
 
-一个零依赖的基于Golang + React.js 的定时任务管理平台
-
-基本逻辑执行任务：通过api同步调用，同步返回
-
-Cron Admin 仅负责定时任务的调度，不负责定时任务的执行
-
-可以配置任何编程语言实现定任务的执行，例如：
-
-- Python: Flask、Django、FastAPI
-- Golang: Gin
-- Node.js: Koa、Express
-- Java: Spring Boot
-- ...
+一个零依赖的基于Golang + React.js 的刷题平台
 
 ## 项目截图
 
@@ -26,19 +14,19 @@ Cron Admin 仅负责定时任务的调度，不负责定时任务的执行
 
 1、下载适合所在运行平台的二进制文件
 
-[https://github.com/mouday/cron-admin/releases](https://github.com/mouday/cron-admin/releases)
+[https://github.com/mouday/go-pass/releases](https://github.com/mouday/go-pass/releases)
 
 2、解压文件并启动服务
 
 ```bash
 # macos: 
-./cron-admin
+./go-pass
 
 # linux: 
-./cron-admin
+./go-pass
 
 # windows: 
-cron-admin.exe
+go-pass.exe
 ```
 
 启动后控制台会输出如下内容
@@ -49,7 +37,7 @@ password: 8),fua+jMN
 ********************************************
 * Welcome Use Cron Admin  v1.0.0
 * server run at:  http://127.0.0.1:8000
-* issue: https://github.com/mouday/cron-admin
+* issue: https://github.com/mouday/go-pass
 ********************************************
 ```
 

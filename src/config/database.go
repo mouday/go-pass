@@ -9,8 +9,8 @@ import (
 
 	"github.com/glebarez/sqlite" // 纯 Go 实现的 SQLite 驱动, 详情参考： https://github.com/glebarez/sqlite
 
-	"github.com/mouday/cron-admin/src/model"
-	"github.com/mouday/cron-admin/src/utils"
+	"github.com/mouday/go-pass/src/model"
+	"github.com/mouday/go-pass/src/utils"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 )
@@ -53,11 +53,14 @@ func GetDB() *gorm.DB {
 func Migrate() {
 	db := GetDB()
 	db.AutoMigrate(
-		&model.TaskModel{},
-		&model.TaskLogModel{},
-		&model.UserModel{},
-		&model.ConfigModel{},
-		&model.RunnerModel{},
+		// &model.TaskModel{},
+		// &model.TaskLogModel{},
+		// &model.UserModel{},
+		// &model.ConfigModel{},
+		// &model.RunnerModel{},
+		&model.QuestionModel{},
+		&model.OptionModel{},
+		&model.AnswerLogModel{},
 	)
 }
 

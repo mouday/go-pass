@@ -2,10 +2,10 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/mouday/cron-admin/src/config"
-	"github.com/mouday/cron-admin/src/model"
-	"github.com/mouday/cron-admin/src/utils"
-	"github.com/mouday/cron-admin/src/vo"
+	"github.com/mouday/go-pass/src/config"
+	"github.com/mouday/go-pass/src/model"
+	"github.com/mouday/go-pass/src/utils"
+	"github.com/mouday/go-pass/src/vo"
 )
 
 type LoginForm struct {

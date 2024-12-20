@@ -6,10 +6,10 @@ import (
 	"time"
 
 	"github.com/levigross/grequests"
-	"github.com/mouday/cron-admin/src/config"
-	"github.com/mouday/cron-admin/src/enums"
-	"github.com/mouday/cron-admin/src/model"
-	"github.com/mouday/cron-admin/src/utils"
+	"github.com/mouday/go-pass/src/config"
+	"github.com/mouday/go-pass/src/enums"
+	"github.com/mouday/go-pass/src/model"
+	"github.com/mouday/go-pass/src/utils"
 )
 
 // 等待队列

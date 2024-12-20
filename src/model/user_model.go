@@ -1,6 +1,6 @@
 package model
 
-import "github.com/mouday/cron-admin/src/utils"
+import "github.com/mouday/go-pass/src/utils"
 
 type UserModel struct {
 	Id         uint            `json:"-"`

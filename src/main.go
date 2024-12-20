@@ -7,10 +7,10 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/mouday/cron-admin/src/config"
-	"github.com/mouday/cron-admin/src/handler"
-	"github.com/mouday/cron-admin/src/router"
-	"github.com/mouday/cron-admin/src/service"
+	"github.com/mouday/go-pass/src/config"
+	"github.com/mouday/go-pass/src/handler"
+	"github.com/mouday/go-pass/src/router"
+	// "github.com/mouday/go-pass/src/service"
 )
 
 //go:embed public/*
@@ -32,7 +32,7 @@ func main() {
 	// 全局异常捕获
 	app.Use(handler.Recover)
 
-	app.Use(handler.AuthMiddleware())
+	// app.Use(handler.AuthMiddleware())
 
 	// 注册路由
 	router.RegistRouter(app)
@@ -41,13 +41,13 @@ func main() {
 	config.Migrate()
 
 	// 初始化数据
-	config.InitData()
+	// config.InitData()
 
 	// 初始化定时任务
-	service.InitCron()
+	// service.InitCron()
 
 	// 启动消费者
-	go service.Consumer()
+	// go service.Consumer()
 
 	// 【Go语言】gin + go:embed 打包静态资源文件
 	// ref: https://blog.csdn.net/Regulations/article/details/128858670
@@ -57,9 +57,9 @@ func main() {
 	appRunAddress := config.GetAppRunAddress()
 
 	fmt.Println("********************************************")
-	fmt.Println("* Welcome Use Cron Admin ", VERSION)
-	fmt.Println("* server run at: ", "http://"+appRunAddress)
-	fmt.Println("* issue: https://github.com/mouday/cron-admin")
+	fmt.Println("* Welcome Use Go Pass ", VERSION)
+	fmt.Println("* server run at: ", "http://" + appRunAddress)
+	fmt.Println("* issue: https://github.com/mouday/go-pass")
 	fmt.Println("********************************************")
 
 	// 监听并在 http://127.0.0.1:8082 上启动服务

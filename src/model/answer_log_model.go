@@ -2,16 +2,16 @@ package model
 
 import "github.com/mouday/go-pass/src/utils"
 
-// 配置
-type ConfigModel struct {
-	Id         uint            `json:"-"`
-	Key        string          `json:"key"  gorm:"index"`
-	Value      string          `json:"value"`
+type AnswerLogModel struct {
+	Id        uint   `json:"id"`
+	QuestionId string `json:"questionId"`
+	Answer    string `json:"answer"`
+	Status int              `json:"status"`
 	CreateTime utils.LocalTime `gorm:"type:datetime;autoCreateTime" json:"createTime"`
 	UpdateTime utils.LocalTime `gorm:"type:datetime;autoUpdateTime" json:"updateTime"`
 }
 
 // 自定义表名
-func (ConfigModel) TableName() string {
-	return "tb_config"
+func (AnswerLogModel) TableName() string {
+	return "tb_answer_log"
 }

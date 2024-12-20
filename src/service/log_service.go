@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"os"
 
-	"github.com/mouday/cron-admin/src/utils"
+	"github.com/mouday/go-pass/src/utils"
 )
 
 func AppendLog(taskId string, taskLogId string, text string) {

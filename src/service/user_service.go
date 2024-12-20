@@ -3,9 +3,9 @@ package service
 import (
 	"fmt"
 
-	"github.com/mouday/cron-admin/src/config"
-	"github.com/mouday/cron-admin/src/model"
-	"github.com/mouday/cron-admin/src/utils"
+	"github.com/mouday/go-pass/src/config"
+	"github.com/mouday/go-pass/src/model"
+	"github.com/mouday/go-pass/src/utils"
 )
 
 func AddUser() {

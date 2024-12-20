@@ -1,16 +1,15 @@
 package api
 
 import (
-
 	"github.com/gin-gonic/gin"
 	"github.com/mouday/go-pass/src/config"
 	"github.com/mouday/go-pass/src/form"
 	"github.com/mouday/go-pass/src/model"
-	"github.com/mouday/go-pass/src/service"
+
 	"github.com/mouday/go-pass/src/vo"
 )
 
-func GetTaskLogList(ctx *gin.Context) {
+func GetAnswerLogList(ctx *gin.Context) {
 	// taskList := service.GetTaskList()
 	// database
 	params := &form.PageForm{
@@ -24,10 +23,10 @@ func GetTaskLogList(ctx *gin.Context) {
 
 	db := config.GetDB()
 
-	taskList := []model.TaskLogModel{}
+	taskList := []model.AnswerLogModel{}
 
 	var count int64
-	tx := db.Model(&model.TaskLogModel{})
+	tx := db.Model(&model.AnswerLogModel{})
 
 	if params.Status != 0 {
 		tx = tx.Where("status = ?", params.Status)
@@ -46,18 +45,17 @@ func GetTaskLogList(ctx *gin.Context) {
 	})
 }
 
-
-func GetTaskLogDetail(ctx *gin.Context) {
-	params := &model.TaskLogModel{}
+func GetAnswerLogDetail(ctx *gin.Context) {
+	params := &model.AnswerLogModel{}
 
 	ctx.BindJSON(&params)
 
-	row := model.TaskLogModel{}
+	row := model.AnswerLogModel{}
 
 	db := config.GetDB()
-	db.Model(&model.TaskLogModel{}).Where("task_log_id = ?", params.TaskLogId).Find(&row)
+	db.Model(&model.AnswerLogModel{}).Where("Id = ?", params.Id).Find(&row)
 
-	content := service.ReadLog(row.TaskId, params.TaskLogId)
+	// content := service.ReadLog(row.TaskId, params.Id)
 
-	vo.Success(ctx, content)
+	vo.Success(ctx, nil)
 }
